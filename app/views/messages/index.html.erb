@@ -1,0 +1,22 @@
+<h1>Messages</h1>
+
+<% if current_user %>
+  <ul>
+    <% @messages.each do |message| %>
+      <li><%= link_to message.to, message_path(message), id: "title-li-#{message.id}", remote: true %></li>
+        <!-- <ul> -->
+          <div id="content-li-<%= message.id %>"></div>
+        <!-- </ul> -->
+    <% end %>
+  </ul>
+
+  <%= link_to "new message", new_message_path, id: "new-form", remote: true %>
+  <div id="new-form-receiver"></div>
+
+  <%= link_to "new contact", new_user_contact_path(current_user), id: "new-contact-form", remote: true %>
+  <div id="new-contact-form-receiver"></div>
+
+  
+<% else %>
+  <h1>Please Log In To Use Our Service</h1>
+<% end %>
