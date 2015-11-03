@@ -1,2 +1,2 @@
-$('#content-li-<%= @message.id %>').html('<%= j render "content", object: @message %>').click(function() { $(this).empty(); });;
-console.log(this)
+$('#content-li-<%= @message.id %>').html('<%= j render "content", object: @message %>').click(function() { $(this).empty(); });
+$('#content-li-<%= @contact.id %>').html('<%= j render "contacts", object: @contact %>').click(function() { $(this).empty(); });

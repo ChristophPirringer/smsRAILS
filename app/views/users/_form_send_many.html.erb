@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+
+<%= form_tag(multi_sms_path, method: "post") do %>
+  <% if @user.contacts.any? %>
+    <ul>
+      <% @user.contacts.each do |contact| %>
+        <li>
+          <%= check_box_tag 'contact_ids[]', contact.id %>
+          <%= label_tag(:contact, "#{contact.first_name}") %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= text_field_tag 'body' %>
+  <%= submit_tag("Send") %>
+<% end %>

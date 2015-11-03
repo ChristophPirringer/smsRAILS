@@ -1,0 +1,4 @@
+<% @contacts.each do |contact| %>
+  <li><%= link_to contact.first_name, user_contact_path(@user, contact), id: "title-li-#{contact.id}", remote: true %></li>
+      <div id="content-li-<%= contact.id %>"></div>
+<% end %>
